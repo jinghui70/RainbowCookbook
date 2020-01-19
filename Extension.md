@@ -15,19 +15,19 @@
 
 扩展点定义的是要管理的规范，一般情况下就是一个简单的 java 接口。建议这个 java 接口实现 INameObject，这样每个扩展都有一个 name 属性，将来可以用名字来找对应的扩展。
 
+```
     public interface SampleExtensionPoint extends INameObject {
         .....
     }
+```
 
-定义好扩展点接口，需要在插件的 Activator 的 doStart 函数里注册这个扩展点。
+定义好扩展点接口，需要在插件的 Activator 中注册这个扩展点。
 
-    public class Activator extends ServiceBundleActivator {
-        @Override
-        protected void doStart() throws BundleException {
-            super.doStart();
-            registerExtensionPoint(SampleExtensionPoint.class);
-        }
-    }
+```
+	protected void registerExtensionPoint() throws BundleException {
+        registerExtensionPoint(SampleExtensionPoint.class);
+	}
+```
 
 使用的时候，ExtensionRegistry 提供了很多获取扩展的函数，可以根据 name，或者 class 来获取指定的扩展对象，也可以获取所有已注册的扩展名字或对象列表。下面是最常用的三个函数：
 
