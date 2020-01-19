@@ -28,8 +28,8 @@
       "button": "赞助",
       "alipayText": "支付宝",
       "wechatText": "微信",
-      "alipay": "https://github.com/jinghui70/RainbowCookbook/blob/master/assets/alipay.png",
-      "wechat": "https://github.com/jinghui70/RainbowCookbook/blob/master/assets/wechat.png"
+      "alipay": "https://raw.githubusercontent.com/jinghui70/RainbowCookbook/master/assets/alipay.png",
+      "wechat": "https://raw.githubusercontent.com/jinghui70/RainbowCookbook/master/assets/wechat.png"
     },
     "anchor-navigation-ex": {
       "showLevel": false,
