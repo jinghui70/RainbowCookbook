@@ -1,0 +1,646 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>关联查询 · Rainbow 开发手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="jinghui70">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Transaction.html" />
+    
+    
+    <link rel="prev" href="Condition.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Introduction.html">
+            
+                <a href="Introduction.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    基本结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Develop.html">
+            
+                <a href="Develop.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    建立开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基础概念与核心代码</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Bundle.html">
+            
+                <a href="Bundle.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Extension.html">
+            
+                <a href="Extension.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    扩展与扩展点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Config.html">
+            
+                <a href="Config.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="IOC.html">
+            
+                <a href="IOC.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Session.html">
+            
+                <a href="Session.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="Converter.html">
+            
+                <a href="Converter.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    数据类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="Database.html">
+            
+                <a href="Database.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    设计目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="RDM.html">
+            
+                <a href="RDM.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    数据模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="DatabaseConfig.html">
+            
+                <a href="DatabaseConfig.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    连接数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Dao.html">
+            
+                <a href="Dao.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="Condition.html">
+            
+                <a href="Condition.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    查询条件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.6" data-path="Join.html">
+            
+                <a href="Join.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    关联查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="Transaction.html">
+            
+                <a href="Transaction.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="DatabaseX.md">
+            
+                <span>
+            
+                    
+                        <b>3.8.</b>
+                    
+                    高级操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">服务</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="Service.html">
+            
+                <a href="Service.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    服务开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="ServiceTest.html">
+            
+                <a href="ServiceTest.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    服务测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="UnitTest.html">
+            
+                <a href="UnitTest.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    怎么写单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="ExportService.html">
+            
+                <a href="ExportService.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    对外提供服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其它</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="Jetty.html">
+            
+                <a href="Jetty.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Web 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Deploy.html">
+            
+                <a href="Deploy.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Maintain.html">
+            
+                <a href="Maintain.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    运行监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >关联查询</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x591A;&#x8868;&#x5173;&#x8054;"><b></b>&#x591A;&#x8868;&#x5173;&#x8054;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5173;&#x8054;&#x5B9A;&#x4E49;"><b></b>&#x5173;&#x8054;&#x5B9A;&#x4E49;</a></li><li><span class="title-icon "></span><a href="#&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x8054;"><b></b>&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x8054;</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;"><b></b>&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;</a></li><li><span class="title-icon "></span><a href="#&#x4E34;&#x65F6;&#x5173;&#x8054;"><b></b>&#x4E34;&#x65F6;&#x5173;&#x8054;</a></li><li><span class="title-icon "></span><a href="#&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;"><b></b>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;</a></li></ul></ul></div><a href="#&#x591A;&#x8868;&#x5173;&#x8054;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x591A;&#x8868;&#x5173;&#x8054;"><a name="&#x591A;&#x8868;&#x5173;&#x8054;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x8868;&#x5173;&#x8054;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x8868;&#x5173;&#x8054;</h1>
+<p>&#x867D;&#x7136;&#x6211;&#x4EEC;&#x63D0;&#x5021;&#x5199;&#x7B80;&#x5355;&#x7684; sql&#xFF0C;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x6280;&#x672F;&#x548C;&#x6280;&#x5DE7;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5173;&#x8054;&#x64CD;&#x4F5C;&#x3002;&#x4F46;&#x662F;&#x6709;&#x65F6;&#x8FD8;&#x662F;&#x514D;&#x4E0D;&#x4E86;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x591A;&#x8868;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#x3002;</p>
+<p>&#x8868;&#x5173;&#x8054;&#x662F;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x53EA;&#x662F;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x7684;&#x4E00;&#x79CD;&#x53E4;&#x8001;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x968F;&#x7740;&#x5927;&#x6570;&#x636E;&#x5E94;&#x7528;&#x7684;&#x53D1;&#x5C55;&#xFF0C;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x4E5F;&#x6709;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x6240;&#x4EE5;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x4ECE;&#x6982;&#x5FF5;&#x4E0A;&#xFF0C;&#x662F;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x4E3A;&#x5BF9;&#x8C61;&#x4E0E;&#x5C5E;&#x6027;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x9002;&#x5E94;&#x66F4;&#x591A;&#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x8981;&#x6C42;&#x3002;</p>
+<p>&#x5173;&#x8054;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6B8A;&#x5C5E;&#x6027;&#xFF0C;&#x628A;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x94FE;&#x63A5;&#x8D77;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E3A;&#x94FE;&#x63A5;&#x5C5E;&#x6027;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E3B;&#x5BF9;&#x8C61;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x539F;&#x6765;&#x7684;&#x4E00;&#x4E2A;&#xFF08;&#x6216;&#x51E0;&#x4E2A;&#xFF09;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;&#x5C5E;&#x6027;&#xFF0C;&#x6307;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x3002;</p>
+<h2 id="&#x5173;&#x8054;&#x5B9A;&#x4E49;"><a name="&#x5173;&#x8054;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x8054;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5173;&#x8054;&#x5B9A;&#x4E49;</h2>
+<p>&#x4E24;&#x4E2A;&#x8868;&#x7684;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x5728;<code>rdmx</code>&#x4E2D;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#xFF0C;&#x6BD4;&#x5982;<code>&#x4EBA;&#x5458;&#x8868; T_RY</code>&#x6709;&#x4E00;&#x4E2A;<code>&#x6240;&#x5C5E;&#x90E8;&#x95E8;ID</code>&#x5B57;&#x6BB5;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4E3A;<code>&#x4EBA;&#x5458;&#x8868; T_RY</code>&#x5EFA;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;&#x5C5E;&#x6027;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;:</p>
+<p><img src="assets/link.png"></p>
+<p>&#x5F53;&#x8981;&#x67E5;&#x8BE2;&#x4EBA;&#x5458;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; <code>&apos;.&apos;</code> &#x8BBF;&#x95EE;&#x94FE;&#x63A5;&#x5C5E;&#x6027;&#x7684;&#x5B50;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code>dao.select(&quot;id,name,org.name&quot;).from(&quot;Person&quot;).where(&quot;org.name&quot;, Op.like, &quot;%&#x5317;&#x4EAC;%&quot;)
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x8FD4;&#x56DE;&#x673A;&#x6784;&#x540D;&#x79F0;&#x4E2D;&#x542B;&#x6709; <strong>&#x5317;&#x4EAC;</strong> &#x7684;&#x6240;&#x6709;&#x4EBA;&#x5458; id,&#x4EBA;&#x5458; name &#x548C;&#x8BE5;&#x4EBA;&#x5458;&#x6240;&#x5C5E;&#x673A;&#x6784;&#x7684; name&#x3002;&#x94FE;&#x63A5;&#x5C5E;&#x6027;&#x7684;&#x5B50;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x52A0;&#x522B;&#x540D;&#x4F5C;&#x4E3A;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x5C5E;&#x6027;&#x540D;&#xFF1A;</p>
+<pre><code>dao.select(&quot;id,name,org.name:orgName&quot;).from(&quot;Person&quot;)
+</code></pre><h2 id="&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x8054;"><a name="&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x8054;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x8054;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x8054;</h2>
+<p>&#x4EBA;&#x5458;&#x8868;&#x4E0E;&#x5BB6;&#x5EAD;&#x6210;&#x5458;&#x8868;&#x662F;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4EBA;&#x5458;&#x8868;&#x7684; id &#x5C5E;&#x6027;&#x5173;&#x8054;&#x5BB6;&#x5EAD;&#x6210;&#x5458;&#x8868;&#x7684;&#x4EBA;&#x5458; id &#x5C5E;&#x6027;&#xFF0C;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x94FE;&#x63A5;&#x5C5E;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x628A;&#x5217;&#x8868;&#x5C5E;&#x6027;&#x6807;&#x8BB0;&#x9009;&#x4E0A;&#x3002;
+<img src="assets/link_list.png"></p>
+<p>&#x8FD9;&#x65F6;&#x5019;&#x67E5;&#x8BE2; family &#x5C5E;&#x6027; &#x4F9D;&#x7136;&#x662F;&#x7528; <code>.</code> &#x6765;&#x6307;&#x5B9A;&#x5B50;&#x5C5E;&#x6027;&#xFF0C;&#x7528; select &#x67E5;&#x8BE2;&#x65F6;&#x5199;&#x6CD5;&#x4E0A;&#x6CA1;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x3002;</p>
+<h2 id="&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;"><a name="&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;</h2>
+<p>&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;&#xFF0C;&#x5E94;&#x8BE5;&#x7528;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x8868;&#x5C06;&#x5176;&#x8F6C;&#x5316;&#x4E3A;&#x4E24;&#x4E2A;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x8054;&#x3002;&#x5982;&#x679C;&#x8981;&#x5BF9;&#x8FD9;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5173;&#x8054;&#xFF0C;&#x5E94;&#x4EE5;&#x4E2D;&#x95F4;&#x8868;&#x4E3A;&#x4E3B;&#x5BF9;&#x8C61;&#x3002;</p>
+<h2 id="&#x4E34;&#x65F6;&#x5173;&#x8054;"><a name="&#x4E34;&#x65F6;&#x5173;&#x8054;" class="anchor-navigation-ex-anchor" href="#&#x4E34;&#x65F6;&#x5173;&#x8054;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E34;&#x65F6;&#x5173;&#x8054;</h2>
+<p>&#x5B9A;&#x4E49;&#x5173;&#x8054;&#x5173;&#x7CFB;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x8003;&#x8651;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x6709;&#x4E9B;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x5404;&#x79CD;&#x539F;&#x56E0;&#x5E76;&#x672A;&#x5B9A;&#x4E49;&#x5728;&#x6A21;&#x578B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x67E5;&#x8BE2;&#x65F6;&#x4E34;&#x65F6;&#x589E;&#x52A0;&#x5173;&#x8054;&#x5B9A;&#x4E49;&#x6765;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x3002;&#x53C2;&#x770B; Select &#x6E90;&#x7801;&#x7684; extraLink &#x51FD;&#x6570;&#x3002;</p>
+<pre><code>    /**
+     * &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5E76;&#x672A;&#x5B9A;&#x4E49;&#x5728;rdmx&#x6A21;&#x578B;&#x91CC;&#x9762;&#x7684;&#x989D;&#x5916;&#x7684;&#x94FE;&#x63A5;
+     *
+     * @param name link&#x7684;&#x540D;&#x79F0;
+     * @param fields &#x4E3B;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5217;&#x8868;&#xFF0C;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x5272;
+     * @param targetEntityName &#x94FE;&#x63A5;&#x5BF9;&#x8C61;&#x540D;
+     * @param targetFields &#x94FE;&#x63A5;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5217;&#x8868;&#xFF0C;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;
+     * @return
+     */
+    public Select extraLink(String name, String fields, String targetEntityName, String targetFields)
+</code></pre><h2 id="&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;"><a name="&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x95EE;&#x9898;</h2>
+<p>&#x901A;&#x8FC7;&#x94FE;&#x63A5;&#x5C5E;&#x6027;&#x7684;&#x67E5;&#x8BE2;&#xFF0C;&#x5982;&#x679C;&#x94FE;&#x63A5;&#x5BF9;&#x8C61;&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x5199;&#x5728; where &#x5B50;&#x53E5;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;&#x662F; LeftJoin&#xFF0C;&#x5F53;&#x94FE;&#x63A5;&#x5BF9;&#x8C61;&#x6761;&#x4EF6;&#x4E0D;&#x6EE1;&#x8DB3;&#x65F6;&#xFF0C;&#x4E3B;&#x5BF9;&#x8C61;&#x4E5F;&#x67E5;&#x4E0D;&#x51FA;&#x6570;&#x636E;&#x3002;&#x53EF;&#x80FD;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x628A;&#x94FE;&#x63A5;&#x5BF9;&#x8C61;&#x7684;&#x6761;&#x4EF6;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x51FD;&#x6570;&#x6765;&#x5199;&#xFF1A;</p>
+<pre><code>    Select setLinkCnds(String link, C cnd)
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; jinghui70 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-01-19 11:50:10
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Condition.html" class="navigation navigation-prev " aria-label="Previous page: 查询条件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Transaction.html" class="navigation navigation-next " aria-label="Next page: 事务">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"关联查询","level":"3.6","depth":1,"next":{"title":"事务","level":"3.7","depth":1,"path":"Transaction.md","ref":"Transaction.md","articles":[]},"previous":{"title":"查询条件","level":"3.5","depth":1,"path":"Condition.md","ref":"Condition.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","tbfed-pagefooter@^0.0.1","search-pro","-search","-lunr","-sharing","donate","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/jinghui70/rainbow"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"tbfed-pagefooter":{"copyright":"Copyright © jinghui70","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"donate":{"alipay":"https://github.com/jinghui70/RainbowCookbook/blob/master/assets/alipay.png","alipayText":"支付宝","button":"赞助","title":"","wechat":"https://github.com/jinghui70/RainbowCookbook/blob/master/assets/wechat.png","wechatText":"微信"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-anchor","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"search-pro":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"jinghui70","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rainbow 开发手册","language":"zh-hans","gitbook":"*"},"file":{"path":"Join.md","mtime":"2020-01-19T03:50:10.904Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-19T04:03:27.406Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
