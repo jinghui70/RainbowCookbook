@@ -1,31 +1,50 @@
 # 依赖注入
 
-依赖注入（Dependency Injection），或者叫控制反转（Inversion of Control），是 Spring 最早的基础功能之一。Rainbow 借鉴了早期 Spring 的代码，自己定义了一个简单的 IOC 容器，源码在 Core 的 util/ioc package 下。
+依赖注入（Dependency Injection），或者叫控制反转（Inversion of Control），是 Spring 最早的基础功能之一。Rainbow 借鉴了早期 Spring 的代码，自己定义了一个简单的 IOC 容器。
 
 容器中存放的东西，被称为 Bean。Bean 有两种，一种叫单例 Bean，容器只会为它创建一个实例，每次获取这个 Bean，得到的都是同一个对象；另一种叫原型 Bean，每次获取这个 Bean，容器都会创建一个新的实例，并为其注入所有的依赖。
 
-如果熟悉 Spring，这些概念应该很好理解。并且`InitializingBean`、`DisposableBean` 这些接口都和 Spring 是一致的。
+如果熟悉 Spring，这些都是基本概念。并且 Bean 如果实现`InitializingBean`、`DisposableBean` 这些接口，概念和 Spring 是一致的。
 
-## 最基本的容器
+因为简化了的原因，我们只支持属性注入，这意味这每个 Bean 都必须有无参数的缺省构造函数。在需要注入依赖的属性或者 set 方法上，加上`@Inject` 注解即可。
 
-最基本的容器是`Context`类实现的，因为是简化版本的 IOC，要求只能通过 set 函数做依赖注入，并且该函数上需要用`@Inject`注解标记这是需要依赖注入的属性。
+## Bundle 的 Bean 容器
 
-Context 是一个标准的容器，通过一个`Map<String, Bean>`来配置。
+每一个 Bundle，都是由 Activator 管理生命周期的，平台启动 Bundle 时，会创建其 Activator 的实例，Activator 维护了一个 IOC 容器，称之为 Bundle 的 Bean 容器。
 
-## 平台级的容器
+只要在一个类的定义上面添加 `@Bean` 注解，就可以配置为容器中的 Bean。
 
-`ApplicationContext` 派生自 `Context`，不同的是它注册了一个 `InjectProvider` [扩展点](Extension.md)。有些平台级别的对象并不是用容器来管理的，比如数据库访问对象 `Dao` 是所有需要访问数据库的 Bean 都要注入的依赖， `DaoManager` 管理所有的 Dao，并注册了一个 InjectProvider 扩展，这样，ApplicationContext 发现某些 Bean 需要注入 Dao 对象时，就会找到这个扩展来获取需要注入的对象。
+- 配置一个单例 Bean，并设置 BeanName 为 sample：
 
-## 插件的容器
+```
+@Bean(name="sample")
+public class SampleSingleton {
+}
+```
 
-- Context 是容器最底层的实现，一般情况下不会直接用到。
-- ApplicationContext 继承了 Context，增加了平台对象的注入能力，但是一般情况下也不会直接用到。
-- BundleContext 派生自 ApplicationContext，这是开发最直接用到的容器。
+- 配置一个 原型 Bean
 
-在 Bundle 中定义一个 Bean，只需要在它的类定义前面加上 @Bean 标记，就会自动的被放进 BundleContext 中。
+```
+@Bean(singleton=false)
+public class SamplePrototype {
+}
+```
 
-我们知道每个插件都有一个管理生命周期的类 Activator，它的实例是平台创建的，在启动函数 start 中，它遍历插件中所有的类，收集所有标有 @Bean 标记的类并创建 BundleContext，如果某个 Bean 实现了 ActivatorAware 接口或者派生自 ActivatorAwareObject，BundleContext 会把插件的 Activator 注入给它。
+如果不设置 BeanName，默认的 BeanName 为第一个字母小写的类的名字，上面的例子中就是 samplePrototype。
 
-另外需要了解的是，插件是单向依赖的，某个插件中的 Bean 是可以注入其上级插件容器中的 Bean。
+### 几个重要的点：
 
-IOC 是一个重要的概念，IOC 容器统一管理了所有 Bean 的生命周期。在面向服务的开发中，服务实现类一般都是单例的，实现单例模式最简单的办法就是把它定义为一个单例 Bean。
+- 有一个特别的约定，如果类名以 Impl 为结尾，默认的 BeanName 会忽略它。比如 UserServiceImpl 这个类的 BeanName 为 userService。
+- 插件是单向依赖的，插件的容器在为其 Bean 注入依赖的时候，如果在自己的容器中找不到，会到其上级插件容器中寻找。
+- 有时候某个 Bean 需要访问插件的 Activator(参见[访问配置文件](Config.md))，如果它实现了 `ActivatorAware` 接口或者派生自 `ActivatorAwareObject`，容器会把插件的 Activator 注入给它。
+- 如果一个 Bean 同时是一个[扩展](Extension.md)，那么它无需手动注册，只要在注解中标示出来就可以了。
+
+另外需要了解的是，。
+
+## Bean 容器的底层实现
+
+以下内容揭示类容器的实现原理，可以参考看一下，不用深究。
+
+- 最基本的容器是`Context`类实现的，Bean 的配置使用一个`Map<String, Bean>`作为参数传递给 Context 的构造函数。
+- `ApplicationContext` 派生自 `Context`，不同的是它注册了一个 `InjectProvider` [扩展点](Extension.md)。实现了该扩展点的扩展可以把外部对象注入到有需要的 Bean 中。比如数据库访问对象 `Dao` 由 `DaoManager` 管理，所以有一个 Dao 的 InjectProvider 扩展，这样，ApplicationContext 发现某些 Bean 需要注入 Dao 对象时，就会找到这个扩展来获取需要注入的对象。
+- Bundle 的容器 `BundleContext` 派生自`ApplicationContext`
