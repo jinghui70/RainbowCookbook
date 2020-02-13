@@ -168,14 +168,14 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="Extension.html">
+        <li class="chapter " data-level="2.2" data-path="IOC.html">
             
-                <a href="Extension.html">
+                <a href="IOC.html">
             
                     
                         <b>2.2.</b>
                     
-                    扩展与扩展点
+                    依赖注入
             
                 </a>
             
@@ -198,27 +198,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="IOC.html">
-            
-                <a href="IOC.html">
-            
-                    
-                        <b>2.4.</b>
-                    
-                    依赖注入
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5" data-path="Session.html">
+        <li class="chapter " data-level="2.4" data-path="Session.html">
             
                 <a href="Session.html">
             
                     
-                        <b>2.5.</b>
+                        <b>2.4.</b>
                     
                     Session
             
@@ -228,14 +213,44 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="Converter.html">
+        <li class="chapter " data-level="2.5" data-path="Converter.html">
             
                 <a href="Converter.html">
             
                     
-                        <b>2.6.</b>
+                        <b>2.5.</b>
                     
                     数据类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="Utils.html">
+            
+                <a href="Utils.html">
+            
+                    
+                        <b>2.6.</b>
+                    
+                    工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="Extension.html">
+            
+                <a href="Extension.html">
+            
+                    
+                        <b>2.7.</b>
+                    
+                    扩展与扩展点
             
                 </a>
             
@@ -565,8 +580,21 @@ dao.insert(list);
 </code></pre><p>Select &#x5BF9;&#x8C61;&#x5B9E;&#x73B0;&#x4E86; ISelect &#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x63CF;&#x8FF0;&#x4E86;&#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; API &#x770B;&#x4E00;&#x4E0B;&#x5177;&#x4F53;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
 <h3 id="4-&#x6761;&#x4EF6;&#x66F4;&#x65B0;&#x4E0E;&#x5220;&#x9664;"><a name="4-&#x6761;&#x4EF6;&#x66F4;&#x65B0;&#x4E0E;&#x5220;&#x9664;" class="anchor-navigation-ex-anchor" href="#4-&#x6761;&#x4EF6;&#x66F4;&#x65B0;&#x4E0E;&#x5220;&#x9664;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x6761;&#x4EF6;&#x66F4;&#x65B0;&#x4E0E;&#x5220;&#x9664;</h3>
 <p>&#x540C;&#x67E5;&#x8BE2;&#x7C7B;&#x4F3C;&#xFF0C;dao.update() &#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Update &#x5BF9;&#x8C61;&#xFF0C;dao.delete()&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Delete &#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4ED6;&#x4EEC;&#x7684;&#x6267;&#x884C;&#x90FD;&#x8981;&#x8C03;&#x7528;&#x4E00;&#x4E0B;&#x81EA;&#x5DF1;&#x7684; execute &#x51FD;&#x6570;&#x3002;</p>
-<footer class="page-footer"><span class="copyright">Copyright &#xA9; jinghui70 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-01-04 02:51:54
+<pre><code>// &#x5220;&#x9664; id &#x4E3A; 001 &#x7684;&#x4EBA;&#x5458;
+dao.delete(&quot;Person&quot;).byId(&quot;001&quot;);
+dao.delete(&quot;Person&quot;).where(&quot;id&quot;, &quot;001&quot;).execute();
+
+// &#x8BA1;&#x5212;&#x8868;&#x6709;&#x5E74;&#x4EFD;&#x548C;&#x7F16;&#x53F7;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#x505A;&#x4E3B;&#x952E;&#xFF0C;&#x5220;&#x9664;2020&#x5E74;5&#x53F7;&#x8BA1;&#x5212;
+dao.delete(&quot;Plan&quot;).byKey(2020, 5);
+dao.delete(&quot;Plan&quot;).where(&quot;year&quot;, 2020).and(&quot;number&quot;, 5).execute();
+
+// &#x6240;&#x6709;&#x4EBA;&#x7684;&#x5C81;&#x6570;&#x52A0;1
+dao.update(&quot;Person&quot;).set(&quot;age&quot;, &apos;+&apos;, 1).execute();
+
+// id&#x4E3A;001&#x7684;&#x4EBA;&#x5458;&#x6539;&#x540D;&#x4E3A;&#x5F20;&#x4E09;&#x5E76;&#x4E14;&#x5E74;&#x9F84;&#x52A0;1
+dao.update(&quot;Person&quot;).set(&quot;name&quot;, &quot;&#x5F20;&#x4E09;&quot;).set(&quot;age&quot;, &apos;+&apos;, 1).where(&quot;id&quot;, &quot;001&quot;).execute();
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; jinghui70 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-01-20 16:05:05
 </span></footer>
                                 
                                 </section>
@@ -610,7 +638,7 @@ dao.insert(list);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基本操作","level":"3.4","depth":1,"next":{"title":"查询条件","level":"3.5","depth":1,"path":"Condition.md","ref":"Condition.md","articles":[]},"previous":{"title":"连接数据库","level":"3.3","depth":1,"path":"DatabaseConfig.md","ref":"DatabaseConfig.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","tbfed-pagefooter@^0.0.1","search-pro","-search","-lunr","-sharing","donate","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/jinghui70/rainbow"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"tbfed-pagefooter":{"copyright":"Copyright © jinghui70","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"donate":{"alipay":"https://raw.githubusercontent.com/jinghui70/RainbowCookbook/master/assets/alipay.png","alipayText":"支付宝","button":"赞助","title":"","wechat":"https://raw.githubusercontent.com/jinghui70/RainbowCookbook/master/assets/wechat.png","wechatText":"微信"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-anchor","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"search-pro":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"jinghui70","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rainbow 开发手册","language":"zh-hans","gitbook":"*"},"file":{"path":"Dao.md","mtime":"2020-01-03T18:51:54.689Z","type":"markdown"},"gitbook":{"version":"3.2.3"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基本操作","level":"3.4","depth":1,"next":{"title":"查询条件","level":"3.5","depth":1,"path":"Condition.md","ref":"Condition.md","articles":[]},"previous":{"title":"连接数据库","level":"3.3","depth":1,"path":"DatabaseConfig.md","ref":"DatabaseConfig.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","tbfed-pagefooter@^0.0.1","search-pro","-search","-lunr","-sharing","donate","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/jinghui70/rainbow"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"tbfed-pagefooter":{"copyright":"Copyright © jinghui70","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"donate":{"alipay":"https://raw.githubusercontent.com/jinghui70/RainbowCookbook/master/assets/alipay.png","alipayText":"支付宝","button":"赞助","title":"","wechat":"https://raw.githubusercontent.com/jinghui70/RainbowCookbook/master/assets/wechat.png","wechatText":"微信"},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-anchor","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"search-pro":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"jinghui70","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rainbow 开发手册","language":"zh-hans","gitbook":"*"},"file":{"path":"Dao.md","mtime":"2020-01-20T08:05:05.097Z","type":"markdown"},"gitbook":{"version":"3.2.3"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

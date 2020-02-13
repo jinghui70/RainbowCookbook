@@ -7,11 +7,12 @@
 ## 基础概念与核心代码
 
 - [插件](Bundle.md)
-- [扩展与扩展点](Extension.md)
-- [配置文件](Config.md)
 - [依赖注入](IOC.md)
+- [配置文件](Config.md)
 - [Session](Session.md)
 - [数据类型转换](Converter.md)
+- [工具类](Utils.md)
+- [扩展与扩展点](Extension.md)
 
 ## 数据库
 

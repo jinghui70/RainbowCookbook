@@ -1,5 +1,7 @@
 # 基本结构
 
+<img src="\assets\rainbow.png" />
+
 ## 狭义的 Rainbow
 
 从狭义的角度来说，整个平台就是一个核心的包`core.jar`，只有 300 多 K，它提供了以下的内容：
