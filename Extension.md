@@ -9,7 +9,7 @@
 - 字段加工厂(Refinery)
   针对不同的字段类型做加工，比如日期型的可以做计算后转义，代码型的可以翻译，随着需要可以随时增加新的加工厂。这样查询的时候就可以有更丰富的结果了。
 
-扩展可以存在于不同于扩展点的 Bundle 中，所以未来的扩展是通过不断的增加插件来完成的，这样做的好处是把处理机制和具体的处理逻辑做了很好的解耦，系统可以无限扩展而不用改动原有代码。
+扩展所在插件依赖扩展点定义所在的插件中，所以未来的扩展是通过不断的增加插件来完成的，这样做的好处是把处理机制和具体的处理逻辑做了很好的解耦，系统可以无限扩展而不用改动原有代码。
 
 ## 扩展点定义与使用
 
@@ -21,11 +21,11 @@
     }
 ```
 
-定义好扩展点接口，需要在插件的 Activator 中注册这个扩展点。
+定义好扩展点接口，需要在插件的 Activator 告诉平台自己插件有哪些扩展点对应的接口类：
 
 ```
-	protected void registerExtensionPoint() throws BundleException {
-        registerExtensionPoint(SampleExtensionPoint.class);
+  protected List<Class<?>> extensionPoints() {
+		return Arrays.asList(SampleExtensionPoint.class, another.class);
 	}
 ```
 
@@ -37,14 +37,45 @@
 
 ## 扩展实现
 
-具体的扩展对象就是一个类，只要实现了扩展点的接口，注册在平台扩展注册表就可以了。
-扩展必须是单例的，最简单的办法就是定义它为一个单例的 Bean，并在 @Bean 里面注明它实现了哪个扩展点接口。
+一个扩展点（接口类）可以有很多的扩展（接口实现类实例），通过扩展点可以得到所有的扩展，他们之间的关系由扩展注册表维护。因此，我们定义类一个扩展点的实现类，并创建了它的实例后，需要注册一下，扩展注册表提供的注册扩展方法如下：
 
-    @Bean(extention=SampleExtensionPoint.class)
-    public class E implements SampleExtensionPoint {
-        @Override
-        public String getName() {
-            return "E";
-        }
-        ....
+```
+	/**
+	 * 注册一个扩展
+	 *
+	 * @param bundle 扩展所在插件ID
+	 * @param clazz  扩展点类
+	 * @param name   扩展名，可以为空，自动取名
+   * @param order  扩展顺序
+	 * @param object 扩展对象
+	 * @return
+	 */
+	public static Extension registerExtension(String bundle, Class<?> clazz, String name, int order, Object object);
+```
+
+通常情况下，扩展是单例模式的，我们只需要在单例 Bean 的定义上，标注@Extension 就可以简单的实现注册了。
+@Extension
+
+```
+  @Extension
+  @Bean
+  public class E implements SampleExtensionPoint {
+    @Override
+    public String getName() {
+      return "E";
     }
+    ....
+  }
+```
+
+@Extension 默认该类实现的第一个接口为扩展点，如果不是，需要手动的指定。同样，扩展的名字和顺序也可以手动指定代替默认值。
+
+```
+@Extension(name="ttt", order=1, point=SampleExtensionPoint.class)
+```
+
+## 扩展的顺序
+
+多数情况下，我们不关心扩展的顺序，默认的 order 是 0。
+
+通过`ExtensionRegistry.getExtensionObjects`获得的列表中，会按照 order 来排序，order 为 0 的扩展会排在不为 0 的扩展后面。

@@ -26,6 +26,5 @@ parent 定义的是依赖的其它插件，运行时，平台会把这些父插�
 
 - activator 是插件与外部世界的界面
 - activator 维护了一个 Bean Context，插件启动时，所有单例 Bean 都会被加载。
-- 当我们写的一个 Bean 需要用到 activator 时，可以继承 ActivatorAwareObjectd 对象或者实现 ActivatorAware 接口，平台就会为它注入 activator。一般我们注入 activator 都是为了获取插件的配置信息
-- 重载 doStart 函数可以实现插件启动时的一些操作或者请求一些资源，一般我们在这里注册扩展点
+- 重载 doStart 函数可以实现插件启动时的一些操作或者请求一些资源，一般我们在这里注册[扩展点](Extension.md)
 - 重载 stop 函数可以实现插件停止时释放资源
